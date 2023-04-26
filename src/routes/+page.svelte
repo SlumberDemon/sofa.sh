@@ -38,7 +38,7 @@
     <div class="text-1xl">
       Made with SvelteKit & TailwindCSS (<a
         class="text-slate-400"
-        href="https://github.com/slumberdemon/sofa.dev">view source</a
+        href="https://github.com/slumberdemon/sofa.sh">view source</a
       >).
     </div>
     <div class="text-[1rem]">
