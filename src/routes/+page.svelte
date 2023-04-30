@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { blur } from "svelte/transition";
 
   const socials = [
     {
@@ -97,7 +98,7 @@
   }
 </script>
 
-<div class="flex justify-center">
+<div class="flex justify-center" in:blur={{ duration: 800 }}>
   <div class="lg:w-4/12 m-4">
     <!-- Dot -->
     <div class="flex">
