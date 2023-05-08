@@ -9,7 +9,7 @@
   href={link}
   class="p-2 rounded-md hover:bg-neutral-100 cursor-pointer transition ease-in duration-300 m-1 dark:hover:bg-neutral-900 select-none"
 >
-  <div class="justify-between flex flex-row my-1">
+  <div class="justify-between flex flex-row my-2">
     <div
       class="text-1xl text-black dark:text-white"
       class:animate-pulse={!repo}
