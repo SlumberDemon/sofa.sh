@@ -24,7 +24,7 @@
     </div>
   </div>
   <div
-    class="text-neutral-500 text-[0.8rem] text-ellipsis truncate"
+    class="text-neutral-500 text-[0.8rem] text-ellipsis truncate mb-2"
     class:animate-pulse={!repo}
   >
     {description || "Loading…"}
