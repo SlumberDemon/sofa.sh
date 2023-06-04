@@ -124,4 +124,4 @@
 
 <!-- Control Bar -->
 
-<ControlBar page_name="Projects" page_for="links" page_back="about" />
+<ControlBar page_name="Projects" page_for="/" page_back="about" />
