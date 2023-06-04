@@ -7,9 +7,7 @@ micros:
     primary: true
     public_routes:
       - "/"
-      - "/new"
       - "/shop"
-      - "/links"
       - "/about"
       - "/_app/*"
       - "/projects"

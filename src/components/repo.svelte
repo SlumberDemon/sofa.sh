@@ -17,13 +17,16 @@
       {repo || "Loading…"}
     </div>
     <div
-      class="border rounded-md p-1 text-[10px] border-black items-center flex dark:border-white dark:text-white"
+      class="border rounded-md p-1 text-[10px] border-black items-center flex dark:border-white dark:text-white mx-1"
       class:animate-pulse={!repo}
     >
       {language || "Loading…"}
     </div>
   </div>
-  <div class="text-neutral-500 text-[0.8rem]" class:animate-pulse={!repo}>
+  <div
+    class="text-neutral-500 text-[0.8rem] text-ellipsis truncate"
+    class:animate-pulse={!repo}
+  >
     {description || "Loading…"}
   </div>
 </a>

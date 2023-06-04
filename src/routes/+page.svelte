@@ -22,12 +22,7 @@
     },
   ];
 
-  const reposLoad = fetch(
-    "https://gh-pinned-repos.egoist.dev/?username=slumberdemon"
-  ).then((response) => {
-    if (response.ok) return response.json();
-    throw new Error(response.status);
-  });
+  let reposLoad = [];
 
   let mode = "";
 
@@ -42,6 +37,13 @@
     }
     localStorage.theme === "light";
     rfrshMode();
+
+    reposLoad = fetch(
+      "https://gh-pinned-repos.egoist.dev/?username=slumberdemon"
+    ).then((response) => {
+      if (response.ok) return response.json();
+      throw new Error(response.status);
+    });
   });
 
   function modeSwitcher() {
@@ -121,7 +123,7 @@
     </div>
 
     <!-- Projects -->
-    <div class="grid grid-cols-2 gap-2">
+    <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
       {#await reposLoad}
         {#each Array(6).fill(null) as _}
           <Repo />
