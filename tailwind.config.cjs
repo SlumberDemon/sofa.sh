@@ -21,14 +21,6 @@ module.exports = {
       },
     },
   },
-  safelist: [
-    {
-      pattern: /bg-(red|green|orange|stone)-(100|200|300|400|500)/,
-    },
-    {
-      pattern: /border-(red|green|orange|stone)-(100|200|300|400|500)/,
-    },
-  ],
   darkMode: "class",
   plugins: [],
 };
