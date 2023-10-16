@@ -11,3 +11,4 @@ micros:
       - "/about"
       - "/_app/*"
       - "/projects"
+      - "/startpage"
