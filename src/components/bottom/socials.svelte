@@ -21,7 +21,7 @@
       <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28" />
     </svg>
   </a>
-  <a href="https://twitter.com/slumberdemon">
+  <a href="https://x.com/slumberdemon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon icon-tabler icon-tabler-brand-x h-8 w-8 hover:stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"

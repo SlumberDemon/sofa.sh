@@ -7,8 +7,8 @@ micros:
     primary: true
     public_routes:
       - "/"
-      - "/shop"
-      - "/about"
       - "/_app/*"
       - "/projects"
       - "/startpage"
+      - "/banner.png"
+      - "/favicon.svg"
