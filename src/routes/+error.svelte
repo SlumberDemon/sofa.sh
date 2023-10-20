@@ -10,32 +10,25 @@
 <!-- Page -->
 
 <div
-  class="m-6 flex h-screen w-screen flex-wrap items-center scroll-smooth justify-center flex-col text-center overflow-hidden"
+  class="flex h-screen w-screen flex-wrap items-center scroll-smooth justify-center flex-col text-center overflow-hidden"
 >
-  <div class="text-black text-6xl font-sans dark:text-white">
-    {$page.status} | {$page.error.message}
+  <div class="font-rampart text-6xl text-rose-600">
+    {$page.status}
   </div>
-  <div class="hover:scale-110 dark:text-white">
-    <a href="/" class="cursor-w-resize">
-      <div />
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="icon icon-tabler icon-tabler-arrow-narrow-left"
-        width="60"
-        height="60"
-        viewBox="0 0 24 24"
-        stroke-width="1"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <line x1="5" y1="12" x2="19" y2="12" />
-        <line x1="5" y1="12" x2="9" y2="16" />
-        <line x1="5" y1="12" x2="9" y2="8" />
-      </svg>
-    </a>
+  <div class="text-black text-4xl dark:text-white font-sans mt-1">
+    {$page.error.message}
   </div>
-  <div />
+</div>
+
+<div class="fixed bottom-0 left-0 m-2">
+  <a class="flex" href="/">
+    <div
+      class="rounded-full border-rose-100 border-4 dark:border-rose-400 select-none dark:border-opacity-30"
+    >
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <div
+        class="bg-rose-600 rounded-full w-12 h-12 hover:scale-110 transition ease-in-out duration-500 cursor-pointer"
+      />
+    </div>
+  </a>
 </div>

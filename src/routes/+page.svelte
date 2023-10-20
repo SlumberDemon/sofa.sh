@@ -1,30 +1,10 @@
 <script>
   import { onMount } from "svelte";
-  import { blur } from "svelte/transition";
-  import Repo from "../components/repo.svelte";
+  import Barcode from "../components/bottom/barcode.svelte";
+  import Socials from "../components/bottom/socials.svelte";
 
-  const socials = [
-    {
-      label: "Email",
-      url: "mailto:hi@sofa.sh",
-    },
-    {
-      label: "Twitter",
-      url: "https://twitter.com/slumberdemon",
-    },
-    {
-      label: "Github",
-      url: "https://github.com/slumberdemon",
-    },
-    {
-      label: "Old Site",
-      url: "https://old.sofa.sh",
-    },
-  ];
-
-  let reposLoad = [];
-
-  let mode = "";
+  let mode;
+  let iSwitch;
 
   onMount(async () => {
     mode = localStorage.theme;
@@ -37,13 +17,6 @@
     }
     localStorage.theme === "light";
     rfrshMode();
-
-    reposLoad = fetch(
-      "https://gh-pinned-repos.egoist.dev/?username=slumberdemon"
-    ).then((response) => {
-      if (response.ok) return response.json();
-      throw new Error(response.status);
-    });
   });
 
   function modeSwitcher() {
@@ -61,81 +34,53 @@
     mode = localStorage.theme;
     window.location.reload;
   }
+
+  function showI() {
+    iSwitch = true;
+  }
+
+  function hideI() {
+    iSwitch = false;
+  }
+
+  $: icoSwitch = iSwitch;
 </script>
 
-<div class="flex justify-center" in:blur={{ duration: 800 }}>
-  <div class="lg:w-4/12 m-4">
-    <!-- Dot -->
-    <div class="flex">
-      <div
-        class="rounded-full border-rose-100 border-4 dark:border-rose-400 select-none dark:border-opacity-30"
-      >
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div
-          class="bg-rose-600 rounded-full w-12 h-12 hover:scale-110 transition ease-in-out duration-500 cursor-pointer"
-          on:click={modeSwitcher}
-        />
-      </div>
-    </div>
+<svelte:head>
+  <title>Sofa</title>
+</svelte:head>
 
-    <!-- Main -->
+<div class="flex justify-center items-center h-screen flex-col m-4">
+  <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
+    ソファ
+  </div>
+  <div class="flex flex-row mt-4 cursor-pointer dark:text-white">
+    <div>Projects</div>
+    <div class="cursor-default">⬩</div>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div on:click={showI}>Socials</div>
+  </div>
+</div>
+
+<div class="fixed bottom-0 flex justify-between items-center w-full p-2">
+  <div class="flex">
     <div
-      class="flex justify-between items-center my-12 mx-2 flex-col md:flex-row"
+      class="rounded-full border-rose-100 border-4 dark:border-rose-400 select-none dark:border-opacity-30"
     >
-      <!-- Text -->
-      <div class="select-none">
-        <div class="text-6xl text-black dark:text-white">Sofa</div>
-        <div class="text-1xl text-neutral-500">@SlumberDemon</div>
-      </div>
-
-      <!-- Socials -->
-      <div class="text-neutral-700 text-[0.8rem] dark:text-neutral-500">
-        <div class="grid grid-cols-2 gap-2">
-          {#each socials as social}
-            <a
-              href={social["url"]}
-              class="items-center flex hover:text-black cursor-pointer dark:hover:text-white select-none"
-              ><div>
-                {social["label"]}
-              </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-arrow-wave-right-up h-10 w-10 transition ease-in duration-500 hover:text-rose-600"
-                width="60"
-                height="60"
-                viewBox="0 0 24 24"
-                stroke-width="0.5"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M17 10h4v4" />
-                <path
-                  d="M3 12c.887 -1.284 2.48 -2.033 4 -2c1.52 -.033 3.113 .716 4 2s2.48 2.033 4 2c1.52 .033 3 -1 4 -2l2 -2"
-                />
-              </svg></a
-            >
-          {/each}
-        </div>
-      </div>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <div
+        class="bg-rose-600 rounded-full w-12 h-12 hover:scale-110 transition ease-in-out duration-500 cursor-pointer"
+        on:click={modeSwitcher}
+      />
     </div>
+  </div>
 
-    <!-- Projects -->
-    <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
-      {#await reposLoad}
-        {#each Array(6).fill(null) as _}
-          <Repo />
-        {/each}
-      {:then repos}
-        {#each repos as repo}
-          <Repo {...repo} />
-          <!-- div class="border-t border-black dark:border-neutral-700 border-dashed border-spacing-2"/>-->
-        {/each}
-      {:catch error}
-        <pre>{error.stack}</pre>
-      {/await}
-    </div>
+  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+  <div on:mouseover={showI} on:mouseleave={hideI}>
+    {#if icoSwitch}
+      <Socials />
+    {:else}
+      <Barcode />
+    {/if}
   </div>
 </div>

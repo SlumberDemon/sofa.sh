@@ -1,5 +1,5 @@
 v: 0
-icon: ./static/icon.webp
+icon: ./static/icon.png
 micros:
   - name: sofa
     src: .
