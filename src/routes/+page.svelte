@@ -51,14 +51,25 @@
   <title>Sofa</title>
 </svelte:head>
 
-<div class="flex justify-center items-center h-screen flex-col m-4">
+<div class="flex justify-center items-center h-screen flex-col m-4 fixed">
   <div class="lg:w-4/12 md:w-2/4 sm:w-1/2 xl:w-4/12 2xl:w-4/12">
-    <div class="flex flex-row gap-2">
-      <img
+    <div class="flex flex-row items-center">
+      <!--<img
         src="https://cdn.sofa.sh/pfp.png"
         alt="sofa"
         class="h-16 w-16 grayscale rounded-xl drop-shadow-md hover:grayscale-0 transition ease-in-out duration-500 select-none"
-      />
+      />-->
+      <a href="https://www.transhumans.xyz/images/astro">
+        <svg
+          class="w-28 h-28 hover:scale-110 transition ease-in-out duration-500"
+        >
+          <image
+            xlink:href="https://assets-global.website-files.com/64c73d04a946980a4476537e/64d4526f8454ba4abb09e19e_Astro.svg"
+            src="svg"
+            class="w-28 h-28 drop-shadow-md dark:invert"
+          />
+        </svg>
+      </a>
       <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
         ソファ
       </div>
@@ -67,13 +78,14 @@
     <div
       class="font-sans font-thin mt-2 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-500"
     >
-      Passionate about the seamless blend of artistry and development. Currently
-      at <Link url="https://deta.space" label="deta" />, shaping SpaceOS and
-      improving my own craft. <!--Also in the process of learning Japanese.-->
+      Passionate about the seamless blend of artistry and software. Currently at <Link
+        url="https://deta.space"
+        label="deta"
+      />, shaping SpaceOS and improving my own craft. <!--Also in the process of learning Japanese.-->
       Discover more about me on my
       <span
         on:click={showI}
-        class="cursor-pointer dark:text-white text-black hover:text-rose-600 transition ease-in-out duration-500"
+        class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
         >socials</span
       >
       or explore my
