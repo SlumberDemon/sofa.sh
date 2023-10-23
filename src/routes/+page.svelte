@@ -51,7 +51,9 @@
   <title>Sofa</title>
 </svelte:head>
 
-<div class="flex justify-center items-center h-screen flex-col m-4 fixed">
+<div
+  class="flex justify-center items-center h-screen flex-col m-4 lg:fixed md:fixed"
+>
   <div class="lg:w-4/12 md:w-2/4 sm:w-1/2 xl:w-4/12 2xl:w-4/12">
     <div class="flex flex-row items-center">
       <!--<img
