@@ -3,7 +3,7 @@
   import Link from "./projects/link.svelte";
   import Barcode from "../components/bottom/barcode.svelte";
   import Socials from "../components/bottom/socials.svelte";
-  import Pfp from "../components/pfp.svelte";
+  import Icon from "../components/icon.svelte";
 
   let mode;
   let iSwitch;
@@ -62,8 +62,11 @@
         alt="sofa"
         class="h-16 w-16 grayscale rounded-xl drop-shadow-md hover:grayscale-0 transition ease-in-out duration-500 select-none"
       />-->
-      <a href="https://www.transhumans.xyz/images/astro">
-        <Pfp />
+      <a
+        href="https://www.transhumans.xyz/images/astro"
+        class="hover:scale-110 transition ease-in-out duration-500 hover:drop-shadow-md"
+      >
+        <Icon />
       </a>
       <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
         ソファ
