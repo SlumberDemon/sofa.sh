@@ -1,8 +1,12 @@
 <script>
-  import { blur } from "svelte/transition";
+  import { slide } from "svelte/transition";
+  import { sineInOut } from "svelte/easing";
 </script>
 
-<div class="flex flex-row gap-2" in:blur>
+<div
+  class="flex flex-row gap-2"
+  in:slide={{ duration: 300, easing: sineInOut }}
+>
   <a href="mailto:hi@sofa.sh">
     <svg
       xmlns="http://www.w3.org/2000/svg"

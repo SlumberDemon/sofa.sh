@@ -74,7 +74,7 @@
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
-      class="font-sans font-thin mt-2 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-500"
+      class="font-sans font-thin mt-2 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400"
     >
       Passionate about the seamless blend of artistry and software. Currently at <Link
         url="https://deta.space"
