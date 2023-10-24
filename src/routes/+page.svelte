@@ -3,6 +3,7 @@
   import Link from "./projects/link.svelte";
   import Barcode from "../components/bottom/barcode.svelte";
   import Socials from "../components/bottom/socials.svelte";
+  import Pfp from "../components/pfp.svelte";
 
   let mode;
   let iSwitch;
@@ -62,15 +63,7 @@
         class="h-16 w-16 grayscale rounded-xl drop-shadow-md hover:grayscale-0 transition ease-in-out duration-500 select-none"
       />-->
       <a href="https://www.transhumans.xyz/images/astro">
-        <svg
-          class="w-28 h-28 hover:scale-110 transition ease-in-out duration-500"
-        >
-          <image
-            xlink:href="https://assets-global.website-files.com/64c73d04a946980a4476537e/64d4526f8454ba4abb09e19e_Astro.svg"
-            src="svg"
-            class="w-28 h-28 drop-shadow-md dark:invert"
-          />
-        </svg>
+        <Pfp />
       </a>
       <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
         ソファ
