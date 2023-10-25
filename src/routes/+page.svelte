@@ -1,41 +1,12 @@
 <script>
-  import { onMount } from "svelte";
+  import Dot from "../components/dot.svelte";
   import Link from "./projects/link.svelte";
+  import Icon from "../components/icon.svelte";
+  import Name from "../components/name.svelte";
   import Barcode from "../components/bottom/barcode.svelte";
   import Socials from "../components/bottom/socials.svelte";
-  import Icon from "../components/icon.svelte";
 
-  let mode;
   let iSwitch;
-
-  onMount(async () => {
-    mode = localStorage.theme;
-    if (localStorage.theme === undefined || localStorage.theme === "light") {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    }
-    localStorage.theme === "light";
-    rfrshMode();
-  });
-
-  function modeSwitcher() {
-    if (localStorage.theme === "dark") {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-    } else if (localStorage.theme === "light" || undefined) {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    }
-    rfrshMode();
-  }
-
-  function rfrshMode() {
-    mode = localStorage.theme;
-    window.location.reload;
-  }
 
   function showI() {
     iSwitch = true;
@@ -57,20 +28,13 @@
 >
   <div class="lg:w-4/12 md:w-2/4 sm:w-1/2 xl:w-4/12 2xl:w-4/12">
     <div class="flex flex-row items-center">
-      <!--<img
-        src="https://cdn.sofa.sh/pfp.png"
-        alt="sofa"
-        class="h-16 w-16 grayscale rounded-xl drop-shadow-md hover:grayscale-0 transition ease-in-out duration-500 select-none"
-      />-->
       <a
         href="https://www.transhumans.xyz/images/astro"
         class="hover:scale-110 transition ease-in-out duration-500 hover:drop-shadow-md"
       >
         <Icon />
       </a>
-      <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
-        ソファ
-      </div>
+      <Name />
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
@@ -95,18 +59,7 @@
 </div>
 
 <div class="fixed bottom-0 flex justify-between items-center w-full p-2">
-  <div class="flex">
-    <div
-      class="rounded-full border-rose-100 border-4 dark:border-rose-400 select-none dark:border-opacity-30"
-    >
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <div
-        class="bg-rose-600 rounded-full w-12 h-12 hover:scale-110 transition ease-in-out duration-500 cursor-pointer"
-        on:click={modeSwitcher}
-      />
-    </div>
-  </div>
-
+  <Dot />
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
   <div on:mouseover={showI} on:mouseleave={hideI}>
     {#if icoSwitch}
@@ -116,37 +69,3 @@
     {/if}
   </div>
 </div>
-
-<!--
-<style>
-  .text-flow {
-    margin: 0;
-    padding: 0;
-    font-size: 120px;
-    text-transform: uppercase;
-    position: relative;
-    color: #000000;
-  }
-
-  .text-flow:before {
-    content: "Sofa";
-    position: absolute;
-    color: #ffffff;
-    background-color: #e11d48;
-    top: 0;
-    left: 0;
-    width: 0%;
-    overflow: hidden;
-    transition: all 0.5s;
-  }
-
-  .text-flow:hover:before {
-    width: 100%;
-  }
-  .fill-right {
-    display: inline;
-    text-decoration: none;
-    -webkit-user-select: none
-}
-</style>
--->
