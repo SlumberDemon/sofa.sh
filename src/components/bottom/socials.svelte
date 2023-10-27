@@ -10,7 +10,7 @@
   <a href="mailto:hi@sofa.sh">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-at h-8 w-8 hover:stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
+      class="icon icon-tabler icon-tabler-at h-8 w-8 hover:!stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
       width="60"
       height="60"
       viewBox="0 0 24 24"
@@ -28,7 +28,7 @@
   <a href="https://x.com/slumberdemon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-brand-x h-8 w-8 hover:stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
+      class="icon icon-tabler icon-tabler-brand-x h-8 w-8 hover:!stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
       width="60"
       height="60"
       viewBox="0 0 24 24"
@@ -46,7 +46,7 @@
   <a href="https://github.com/slumberdemon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-brand-github h-8 w-8 hover:stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
+      class="icon icon-tabler icon-tabler-brand-github h-8 w-8 hover:!stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
       width="60"
       height="60"
       viewBox="0 0 24 24"
@@ -65,7 +65,7 @@
   <a href="https://archive.sofa.sh">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-box h-8 w-8 hover:stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
+      class="icon icon-tabler icon-tabler-box h-8 w-8 hover:!stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
       width="60"
       height="60"
       viewBox="0 0 24 24"
