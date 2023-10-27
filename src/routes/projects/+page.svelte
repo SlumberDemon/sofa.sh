@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import Dot from "../../components/dot.svelte";
   import Repo from "../../components/repos/repo.svelte";
   import Loading from "../../components/repos/loading.svelte";
 
@@ -36,3 +37,5 @@
     </div>
   </div>
 </div>
+
+<Dot />

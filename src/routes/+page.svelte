@@ -1,5 +1,5 @@
 <script>
-  import Dot from "../components/dot.svelte";
+  import Dot from "../components/mode.svelte";
   import Link from "./projects/link.svelte";
   import Icon from "../components/icon.svelte";
   import Name from "../components/name.svelte";
