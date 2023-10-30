@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import Dot from "../../components/dot.svelte";
+  import Dot from "../../components/back.svelte";
   import Repo from "../../components/repos/repo.svelte";
   import Loading from "../../components/repos/loading.svelte";
 

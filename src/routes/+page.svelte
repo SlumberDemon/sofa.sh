@@ -1,6 +1,6 @@
 <script>
+  import Link from "../components/link.svelte";
   import Dot from "../components/mode.svelte";
-  import Link from "./projects/link.svelte";
   import Icon from "../components/icon.svelte";
   import Name from "../components/name.svelte";
   import Status from "../components/status.svelte";
