@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'RampartOne';
-    src: url('/fonts/RampartOne-Regular.woff');
+    src: url('/fonts/RampartOne-Regular.woff2');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'LibreBarcode39Text';
-    src: url('/fonts/LibreBarcode39Text-Regular.woff');
+    src: url('/fonts/LibreBarcode39Text-Regular.woff2');
     font-weight: 400;
 }
 
