@@ -8,7 +8,7 @@
 
   onMount(async () => {
     reposLoad = fetch(
-      "https://gh-pinned-repos.egoist.dev/?username=slumberdemon"
+      "https://gh-pinned-repos--master.deno.dev/?username=slumberdemon"
     ).then((response) => {
       if (response.ok) return response.json();
       throw new Error(response.status);
