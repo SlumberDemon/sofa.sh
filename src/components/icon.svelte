@@ -1,6 +1,7 @@
 <a
   href="https://www.transhumans.xyz/images/astro"
   class="hover:scale-110 transition ease-in-out duration-500 hover:drop-shadow-md"
+  aria-label="Find out more about the icon used by going to the Transhumans website (source)"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
