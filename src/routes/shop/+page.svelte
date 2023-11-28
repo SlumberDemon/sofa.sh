@@ -25,13 +25,20 @@
         <div class="font-times text-5xl text-black dark:text-white">
           Palatial Elegance Sofa
         </div>
-        <div class="font-sans text-2xl text-slate-500 dark:text-slate-300">
-          $300
+        <div class="flex flex-row gap-2">
+          <div
+            class="font-sans text-2xl text-rose-500 dark:text-rose-300 line-through"
+          >
+            $300
+          </div>
+          <div class="font-sans text-2xl text-slate-500 dark:text-slate-300">
+            $250
+          </div>
         </div>
       </div>
-      <a href="/">
+      <a href="https://www.youtube.com/watch?v=yXQViqx6GMY">
         <div
-          class="border-black bg-black p-2 flex-row flex justify-between items-center text-white dark:text-black dark:border-white dark:bg-white hover:scale-105 transition-transform cursor-pointer"
+          class="border-black bg-black p-2 flex-row flex justify-between items-center text-white dark:text-black dark:border-white dark:bg-white hover:scale-105 transition-transform cursor-pointer duration-700 ease-in-out"
         >
           <div class="font-times text-3xl">Acquire</div>
           <div class="justify-end">
