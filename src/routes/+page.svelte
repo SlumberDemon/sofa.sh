@@ -2,7 +2,6 @@
   import Link from "../components/link.svelte";
   import Dot from "../components/mode.svelte";
   import Icon from "../components/icon.svelte";
-  import Name from "../components/name.svelte";
   import Status from "../components/status.svelte";
   import Barcode from "../components/bottom/barcode.svelte";
   import Socials from "../components/bottom/socials.svelte";
@@ -30,7 +29,9 @@
   <div class="lg:w-4/12 md:w-2/4 sm:w-1/2 xl:w-4/12 2xl:w-4/12">
     <div class="flex flex-row items-center">
       <Icon />
-      <Name />
+      <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
+        ソファ
+      </div>
     </div>
     <div
       class="font-sans font-[200] 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400 mt-2"
