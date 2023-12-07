@@ -61,7 +61,7 @@
   <Dot />
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
   <div class="flex flex-row gap-2 items-center">
-    <Status />
+    <!-- <Status />-->
     <div on:mouseover={showI} on:mouseleave={hideI}>
       {#if icoSwitch}
         <Socials />
