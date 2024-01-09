@@ -1,141 +1,73 @@
 <script>
-  import { onMount } from "svelte";
-  import { blur } from "svelte/transition";
-  import Repo from "../components/repo.svelte";
+  import Link from "../components/link.svelte";
+  import Dot from "../components/mode.svelte";
+  import Icon from "../components/icon.svelte";
+  import Status from "../components/status.svelte";
+  import Barcode from "../components/bottom/barcode.svelte";
+  import Socials from "../components/bottom/socials.svelte";
 
-  const socials = [
-    {
-      label: "Email",
-      url: "mailto:hi@sofa.sh",
-    },
-    {
-      label: "Twitter",
-      url: "https://twitter.com/slumberdemon",
-    },
-    {
-      label: "Github",
-      url: "https://github.com/slumberdemon",
-    },
-    {
-      label: "Old Site",
-      url: "https://old.sofa.sh",
-    },
-  ];
+  let iSwitch;
 
-  let reposLoad = [];
-
-  let mode = "";
-
-  onMount(async () => {
-    mode = localStorage.theme;
-    if (localStorage.theme === undefined || localStorage.theme === "light") {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    }
-    localStorage.theme === "light";
-    rfrshMode();
-
-    reposLoad = fetch(
-      "https://gh-pinned-repos--master.deno.dev/?username=slumberdemon"
-    ).then((response) => {
-      if (response.ok) return response.json();
-      throw new Error(response.status);
-    });
-  });
-
-  function modeSwitcher() {
-    if (localStorage.theme === "dark") {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-    } else if (localStorage.theme === "light" || undefined) {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    }
-    rfrshMode();
+  function showI() {
+    iSwitch = true;
   }
 
-  function rfrshMode() {
-    mode = localStorage.theme;
-    window.location.reload;
+  function hideI() {
+    iSwitch = false;
   }
+
+  $: icoSwitch = iSwitch;
 </script>
 
-<div class="flex justify-center" in:blur={{ duration: 800 }}>
-  <div class="lg:w-4/12 m-4">
-    <!-- Dot -->
-    <div class="flex">
-      <div
-        class="rounded-full border-rose-100 border-4 dark:border-rose-400 select-none dark:border-opacity-30"
-      >
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div
-          class="bg-rose-600 rounded-full w-12 h-12 hover:scale-110 transition ease-in-out duration-500 cursor-pointer"
-          on:click={modeSwitcher}
-        />
+<svelte:head>
+  <title>Sofa</title>
+</svelte:head>
+
+<div
+  class="flex justify-center items-center h-screen flex-col m-4 lg:fixed md:fixed"
+>
+  <div class="lg:w-4/12 md:w-2/4 sm:w-1/2 xl:w-4/12 2xl:w-4/12">
+    <div class="flex flex-row items-center">
+      <Icon />
+      <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
+        ソファ
       </div>
     </div>
-
-    <!-- Main -->
     <div
-      class="flex justify-between items-center my-12 mx-2 flex-col md:flex-row"
+      class="font-sans font-[200] 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400 mt-2"
     >
-      <!-- Text -->
-      <div class="select-none">
-        <div class="text-6xl text-black dark:text-white">Sofa</div>
-        <div class="text-1xl text-neutral-500">@SlumberDemon</div>
-      </div>
-
-      <!-- Socials -->
-      <div class="text-neutral-700 text-[0.8rem] dark:text-neutral-500">
-        <div class="grid grid-cols-2 gap-2">
-          {#each socials as social}
-            <a
-              href={social["url"]}
-              class="items-center flex hover:text-black cursor-pointer dark:hover:text-white select-none"
-              ><div>
-                {social["label"]}
-              </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-arrow-wave-right-up h-10 w-10 transition ease-in duration-500 hover:text-rose-600"
-                width="60"
-                height="60"
-                viewBox="0 0 24 24"
-                stroke-width="0.5"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M17 10h4v4" />
-                <path
-                  d="M3 12c.887 -1.284 2.48 -2.033 4 -2c1.52 -.033 3.113 .716 4 2s2.48 2.033 4 2c1.52 .033 3 -1 4 -2l2 -2"
-                />
-              </svg></a
-            >
-          {/each}
-        </div>
-      </div>
+      Passionate about the seamless blend of artistry and software. Currently at
+      <Link url="https://deta.space" label="deta" />, shaping SpaceOS and
+      improving my own craft. <!--Also in the process of learning Japanese.-->
+      Discover more about me on my
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span
+        on:click={showI}
+        class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
+        >socials</span
+      >
+      or explore my
+      <Link
+        url="https://github.com/SlumberDemon?tab=repositories"
+        label="projects"
+      />. Feel free to
+      <Link url="mailto:hi@sofa.sh" label="contact" />
+      me.
     </div>
+  </div>
+</div>
 
-    <!-- Projects -->
-    <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
-      {#await reposLoad}
-        {#each Array(6).fill(null) as _}
-          <Repo />
-        {/each}
-      {:then repos}
-        {#each repos as repo}
-          <Repo {...repo} />
-          <!-- div class="border-t border-black dark:border-neutral-700 border-dashed border-spacing-2"/>-->
-        {/each}
-      {:catch error}
-        <pre>{error.stack}</pre>
-      {/await}
+<div class="fixed bottom-0 flex justify-between items-center w-full p-2">
+  <Dot />
+  <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+  <div class="flex flex-row gap-2 items-center">
+    <!-- <Status />-->
+    <div on:mouseover={showI} on:mouseleave={hideI}>
+      {#if icoSwitch}
+        <Socials />
+      {:else}
+        <Barcode />
+      {/if}
     </div>
   </div>
 </div>
