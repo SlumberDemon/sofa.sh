@@ -1,5 +1,5 @@
 v: 0
-icon: ./static/icon.webp
+icon: ./static/icon.png
 micros:
   - name: sofa
     src: .
@@ -7,8 +7,9 @@ micros:
     primary: true
     public_routes:
       - "/"
-      - "/shop"
-      - "/about"
-      - "/_app/*"
+      - "/_app/*"  
+      - "/fonts/*"
       - "/projects"
       - "/startpage"
+      - "/banner.png"
+      - "/favicon.svg"

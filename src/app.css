@@ -1,8 +1,27 @@
 @font-face {
-    font-family: 'Inter', sans-serif;
-    src: url('/static/fonts/Inter-Regular.woff');
+    font-family: 'RampartOne';
+    src: url('/fonts/RampartOne-Regular.woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LibreBarcode39Text';
+    src: url('/fonts/LibreBarcode39Text-Regular.woff2');
+    font-weight: 400;
+    font-display: swap;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-moz-selection { 
+    color: #ffffff;
+    background: #e11d48;
+}
+
+::selection {
+    color: #ffffff;
+    background: #e11d48;
+}
