@@ -1,3 +1,4 @@
+<!-- General startpage (not rly personal) -->
 <script>
   import { onMount } from "svelte";
   import ControlAuto from "../../components/ControlAuto.svelte";
@@ -37,6 +38,8 @@
     },
   ];
 
+  let query;
+
   let currentDateTime = new Date();
 
   onMount(() => {
@@ -59,6 +62,8 @@
       clearInterval(interval);
     };
   });
+
+  // Why am I doing all this??
 
   function getWeekDay(c) {
     let daysList = [
@@ -92,6 +97,13 @@
   function getDate(c) {
     return c.getDate();
   }
+  function getSeconds(c) {
+    var t = c.getSeconds();
+    if (t.toString().length == 1) {
+      return "0" + c.getSeconds();
+    }
+    return c.getSeconds();
+  }
   function getHour(c) {
     return c.getHours() % 12 || 12;
   }
@@ -101,6 +113,9 @@
   function getMeridiem(c) {
     return c.getHours() < 12 ? "AM" : "PM";
   }
+
+  // ^ How late or tired was I when I made this 😭
+  // i probably shouldnt touch it now, maybe once i remake this fully. if it isnt broken, dont fix it
 
   let mode;
 
@@ -135,10 +150,10 @@
           <img
             src="https://cdn.sofa.sh/a.png"
             alt="icon"
-            class="rounded-md drop-shadow-md w-20 h-20 blur-2xl hover:blur-none transition ease-in-out duration-500 cursor-pointer"
+            class="rounded-md drop-shadow-md w-20 h-20 blur-2xl hover:blur-none transition ease-in-out duration-500 cursor-pointer my-2"
           />
           <div
-            class="rounded-full absolute text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1"
+            class="rounded-full absolute text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1 hover:scale-110 transition ease-in-out duration-500"
           >
             {#if mode == "dark"}
               <svg
@@ -184,6 +199,7 @@
           </div>
         </div>
       </div>
+
       <div class="text-right dark:text-white">
         <div class="text-3xl">
           {getWeekDay(currentDateTime).substr(0, 3)}
@@ -191,11 +207,22 @@
           {getDate(currentDateTime)}
         </div>
         <div class="text-xl font-thin">
-          {getHour(currentDateTime)}:{getMinute(currentDateTime)}
+          {getHour(currentDateTime)}:{getMinute(currentDateTime)}:{getSeconds(
+            currentDateTime
+          )}
           {getMeridiem(currentDateTime)}
         </div>
       </div>
     </div>
+    <form on:submit={(location.href = `https://duckduckgo.com/?q=${query}`)}>
+      <input
+        class="border border-black rounded-md p-1 text-center outline-none min-w-full max-w-full bg-transparent dark:border-white dark:text-white placeholder:font-thin placeholder:dark:text-white placeholder:italic focus:scale-105 transition ease-in-out duration-500"
+        placeholder="Search..."
+        autocomplete="off"
+        spellcheck="false"
+        bind:value={query}
+      />
+    </form>
     <div class="grid grid-cols-4 gap-4 my-4">
       {#each links as link}
         <a
@@ -207,11 +234,6 @@
       {/each}
     </div>
   </div>
-  <!--https://duckduckgo.com/?q={query}-->
-  <!--
-  <input
-    class="border border-black rounded-md p-1 text-center w-fit"
-    placeholder="Search"
-  />
-  -->
 </div>
+
+<!-- add cmdK thingy -->
