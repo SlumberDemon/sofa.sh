@@ -15,13 +15,6 @@ module.exports = {
         rampart: ["RampartOne"],
         libre: ["LibreBarcode39Text"],
       },
-      colors: {
-        beige: "#FFE5D5",
-        terracotta: "#E9A191",
-        brown: "#A07350",
-        mint: "#C1DBC4",
-        tea: "#A8D2D2",
-      },
     },
   },
   darkMode: "class",
