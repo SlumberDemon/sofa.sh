@@ -18,6 +18,8 @@
     <div
       class="bg-rose-600 rounded-full w-12 h-12 hover:scale-110 transition ease-in-out duration-500 cursor-pointer"
       on:click={modeSwitcher}
+      role="button"
+      tabindex="0"
     />
   </div>
 </div>
