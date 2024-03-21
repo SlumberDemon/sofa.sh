@@ -145,6 +145,8 @@
       <div
         class="text-black dark:text-white cursor-pointer"
         on:click={modeSwitcher}
+        role="button"
+        tabindex="0"
       >
         <div class="relative">
           <img

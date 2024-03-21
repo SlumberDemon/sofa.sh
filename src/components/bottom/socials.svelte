@@ -87,7 +87,7 @@
 
 <div
   class="flex flex-row gap-2"
-  in:slide={{ duration: 300, easing: sineInOut }}
+  in:slide|global={{ duration: 300, easing: sineInOut }}
 >
   {#each socials as social}
     <a href={social.link}>

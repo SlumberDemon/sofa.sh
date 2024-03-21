@@ -26,6 +26,7 @@
 <!-- Bad solution but eh -->
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div on:mouseover={showI} on:mouseleave={hideI} class="tooltip">
   <div class="tooltiptext capitalize drop-shadow-md">
     {user.data?.discord_status}

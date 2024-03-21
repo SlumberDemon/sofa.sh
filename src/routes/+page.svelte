@@ -43,6 +43,8 @@
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <span
         on:click={showI}
+        role="button"
+        tabindex="0"
         class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
         >socials</span
       >
@@ -60,8 +62,10 @@
 <div class="fixed bottom-0 flex justify-between items-center w-full p-2">
   <Dot />
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div class="flex flex-row gap-2 items-center">
     <!-- <Status />-->
+    <!-- svelte-ignore a11y-role-has-required-aria-props -->
     <div on:mouseover={showI} on:mouseleave={hideI}>
       {#if icoSwitch}
         <Socials />

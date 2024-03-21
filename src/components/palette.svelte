@@ -97,13 +97,13 @@
   <div
     class="fixed inset-0 dark:bg-black opacity-50 z-20 bg-white"
     on:click={exitPal}
-    in:blur={{ duration: 200 }}
-    out:blur={{ duration: 200 }}
+    in:blur|global={{ duration: 200 }}
+    out:blur|global={{ duration: 200 }}
   />
   <div
     class="absolute inset-0 flex justify-center items-center"
-    in:blur={{ duration: 100 }}
-    out:blur={{ duration: 100 }}
+    in:blur|global={{ duration: 100 }}
+    out:blur|global={{ duration: 100 }}
   >
     <div class="z-30">
       <div
