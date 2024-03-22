@@ -225,7 +225,7 @@
         bind:value={query}
       />
     </form>
-    <div class="grid grid-cols-4 gap-4 my-4">
+    <div class="grid lg:grid-cols-4 gap-4 my-4 grid-cols-2 md:grid-cols-4">
       {#each links as link}
         <a
           href={link.url}
