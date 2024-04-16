@@ -63,59 +63,21 @@
     };
   });
 
-  // Why am I doing all this??
-
-  function getWeekDay(c) {
-    let daysList = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    return daysList[c.getDay()];
-  }
-  function getMonth(c) {
-    let monthsList = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    return monthsList[c.getMonth()];
-  }
-  function getDate(c) {
-    return c.getDate();
-  }
-  function getSeconds(c) {
-    var t = c.getSeconds();
-    if (t.toString().length == 1) {
-      return "0" + c.getSeconds();
-    }
-    return c.getSeconds();
-  }
-  function getHour(c) {
-    return c.getHours() % 12 || 12;
-  }
-  function getMinute(c) {
-    return c.getMinutes() < 10 ? "0" + c.getMinutes() : c.getMinutes();
-  }
-  function getMeridiem(c) {
-    return c.getHours() < 12 ? "AM" : "PM";
-  }
-
-  // ^ How late or tired was I when I made this 😭
-  // i probably shouldnt touch it now, maybe once i remake this fully. if it isnt broken, dont fix it
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
   let mode;
 
@@ -204,15 +166,18 @@
 
       <div class="text-right dark:text-white">
         <div class="text-3xl">
-          {getWeekDay(currentDateTime).substr(0, 3)}
-          {getMonth(currentDateTime).substr(0, 3)}
-          {getDate(currentDateTime)}
+          {days[currentDateTime.getDay()]}
+          {months[currentDateTime.getMonth()]}
+          {currentDateTime.getDate()}
         </div>
         <div class="text-xl font-thin">
-          {getHour(currentDateTime)}:{getMinute(currentDateTime)}:{getSeconds(
-            currentDateTime
-          )}
-          {getMeridiem(currentDateTime)}
+          {currentDateTime.getHours() % 12 ||
+            12}:{currentDateTime.getMinutes() < 10
+            ? "0" + currentDateTime.getMinutes()
+            : currentDateTime.getMinutes()}:{currentDateTime.getSeconds() < 10
+            ? "0" + currentDateTime.getSeconds()
+            : currentDateTime.getSeconds()}
+          {currentDateTime.getHours() < 12 ? "AM" : "PM"}
         </div>
       </div>
     </div>

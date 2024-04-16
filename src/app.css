@@ -1,3 +1,5 @@
+/*fonts */
+
 @font-face {
     font-family: 'RampartOne';
     src: url('/fonts/RampartOne-Regular.woff2');
@@ -12,9 +14,13 @@
     font-display: swap;
 }
 
+/* tailwindcss */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* selection */
 
 ::-moz-selection { 
     color: #ffffff;
@@ -24,4 +30,35 @@
 ::selection {
     color: #ffffff;
     background: #e11d48;
+}
+
+/* cmdk */
+
+[data-cmdk-dialog] {
+    position: absolute; /* Positioning context */
+    top: 50%; /* Move the top edge of the element to the 50% mark of its containing element */
+    left: 50%; /* Move the left edge of the element to the 50% mark of its containing element */
+    transform: translate(-50%, -50%);
+}
+
+[data-cmdk-root] {
+    border-color: rgb(229 229 229);
+    border-radius: 0.375rem;
+    border-width: 1px;
+    margin: 0.5rem;
+    background-color: rgb(255 255 255);
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+[data-cmdk-input] {
+    background-color: transparent;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-bottom-width: 1px;
+    border-color: rgb(229 229 229);
+    padding: 0.5rem;
+}
+
+[data-cmdk-list] {
+    padding: 0.5rem;
 }
