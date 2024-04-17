@@ -183,7 +183,7 @@
     </div>
     <form on:submit={(location.href = `https://duckduckgo.com/?q=${query}`)}>
       <input
-        class="border border-black rounded-md p-1 text-center outline-none min-w-full max-w-full bg-transparent dark:border-white dark:text-white placeholder:font-thin placeholder:dark:text-white placeholder:italic focus:scale-105 transition ease-in-out duration-500"
+        class="border border-black rounded-md p-1 text-center outline-none min-w-full max-w-full bg-transparent dark:border-white dark:text-white placeholder:font-thin placeholder:text-neutral-500 placeholder:dark:text-neutral-400 placeholder:italic focus:scale-105 transition ease-in-out duration-500"
         placeholder="Search..."
         autocomplete="off"
         spellcheck="false"
