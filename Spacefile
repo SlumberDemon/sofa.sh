@@ -11,5 +11,9 @@ micros:
       - "/fonts/*"
       - "/projects"
       - "/startpage"
+      - "/projects/*"
       - "/banner.png"
       - "/favicon.svg"
+    presets:
+      env:
+        - name: API_KEY

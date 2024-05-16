@@ -7,6 +7,12 @@
       document.documentElement.classList.add("dark");
       localStorage.theme = "dark";
     }
+    document
+      .querySelector('meta[name="theme-color"]')
+      .setAttribute(
+        "content",
+        localStorage.theme === "light" ? "#ffffff" : "#000000"
+      );
   }
 </script>
 

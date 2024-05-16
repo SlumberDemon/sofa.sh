@@ -30,6 +30,8 @@
 		}
 
 		document.querySelector("html").classList.add(`${localStorage.theme}`);
+		document.querySelector('meta[name="theme-color"]').setAttribute("content", (localStorage.theme === "light" ? "#ffffff" : "#000000"));
+
 	} catch (e) {
 		console.error(e);
 	}

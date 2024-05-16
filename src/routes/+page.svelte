@@ -49,10 +49,7 @@
         >socials</span
       >
       or explore my
-      <Link
-        url="https://github.com/SlumberDemon?tab=repositories"
-        label="projects"
-      />. Feel free to
+      <Link url="projects" label="favourite projects" />. Feel free to
       <Link url="mailto:hi@sofa.sh" label="contact" />
       me.
     </div>
