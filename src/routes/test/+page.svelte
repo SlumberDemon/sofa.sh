@@ -24,6 +24,7 @@
 
 <!--https://github.com/huntabyte/cmdk-sv-->
 
+<!--
 <script>
   import { Command } from "cmdk-sv";
 
@@ -58,3 +59,6 @@
     <Command.Item>Apple</Command.Item>
   </Command.List>
 </Command.Dialog>
+-->
+
+<div>None</div>
