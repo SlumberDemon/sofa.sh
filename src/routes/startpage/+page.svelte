@@ -209,6 +209,7 @@
             {#each links as link}
                 <a
                     href={link.url}
+                    aria-label="Link to {link.label}"
                     class="hover:scale-110 transition ease-in-out duration-500 cursor-pointer border text-center p-2 rounded-md border-black dark:border-white drop-shadow-md dark:text-white"
                 >
                     {link.label}

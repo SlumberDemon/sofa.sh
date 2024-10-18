@@ -78,7 +78,7 @@
     in:slide|global={{ duration: 300, easing: sineInOut }}
 >
     {#each socials as social}
-        <a href={social.link}>
+        <a href={social.link} aria-label="Social media link">
             {@html social.icon}
         </a>
     {/each}

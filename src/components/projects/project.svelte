@@ -25,6 +25,7 @@
     on:click={expand}
     role="menu"
     tabindex="0"
+    aria-label="Clickable project card"
 >
     <!-- bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacitiy? -->
     <!-- https://www.youtube.com/watch?v=htGfnF1zN4g -->
@@ -93,6 +94,7 @@
                         {#each links as link}
                             <a
                                 href={link.url}
+                                aria-label="Link to {link.name}"
                                 class="items-center flex hover:text-rose-600 cursor-ne-resize dark:text-white select-none transition ease-in duration-500"
                                 ><div>{link.name}</div>
                                 <svg
