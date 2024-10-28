@@ -2,7 +2,6 @@
   import Link from "../components/link.svelte";
   import Dot from "../components/mode.svelte";
   import Icon from "../components/icon.svelte";
-  import Status from "../components/status.svelte";
   import Barcode from "../components/bottom/barcode.svelte";
   import Socials from "../components/bottom/socials.svelte";
 

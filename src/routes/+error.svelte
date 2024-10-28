@@ -1,12 +1,7 @@
 <script>
   import { page } from "$app/stores";
   import Dot from "../components/back.svelte";
-  import ControlAuto from "../components/ControlAuto.svelte";
 </script>
-
-<!-- Control Auto -->
-
-<ControlAuto />
 
 <!-- Page -->
 
