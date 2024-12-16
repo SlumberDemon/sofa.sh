@@ -90,6 +90,10 @@
   $: mode = currentMode;
 </script>
 
+<svelte:head>
+  <title>Startpage</title>
+</svelte:head>
+
 <div class="flex justify-center items-center h-screen flex-col m-4 select-none">
   <div>
     <div class="flex flex-row justify-between items-center">
