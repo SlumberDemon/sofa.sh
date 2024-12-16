@@ -43,7 +43,7 @@ export async function load() {
     {
       date: "Started 2023",
       description: "My archlinux dotfiles",
-      key: "Space Rice",
+      key: "Dotfiles",
       links: [
         { name: "Github", url: "https://github.com/SlumberDemon/dotfiles" },
       ],
