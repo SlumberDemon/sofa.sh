@@ -5,21 +5,17 @@
     import Barcode from "../components/bottom/barcode.svelte";
     import Socials from "../components/bottom/socials.svelte";
 
-    let iSwitch;
+    import { assets } from "$app/paths";
 
-    function showI() {
-        iSwitch = true;
-    }
+    let toggle;
 
-    function hideI() {
-        iSwitch = false;
-    }
-
-    $: icoSwitch = iSwitch;
+    $: socialState = toggle;
 </script>
 
 <svelte:head>
     <title>Sofa</title>
+
+    <meta property="og:image" content="{assets}/banner.png" />
 </svelte:head>
 
 <div
@@ -42,7 +38,7 @@
             Discover more about me on my
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <span
-                on:click={showI}
+                on:click={() => (toggle = true)}
                 role="button"
                 tabindex="0"
                 class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
@@ -63,8 +59,11 @@
     <div class="flex flex-row gap-2 items-center">
         <!-- <Status />-->
         <!-- svelte-ignore a11y-role-has-required-aria-props -->
-        <div on:mouseover={showI} on:mouseleave={hideI}>
-            {#if icoSwitch}
+        <div
+            on:mouseover={() => (toggle = true)}
+            on:mouseleave={() => (toggle = false)}
+        >
+            {#if socialState}
                 <Socials />
             {:else}
                 <Barcode />
