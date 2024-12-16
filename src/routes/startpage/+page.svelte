@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { assets } from "$app/paths";
 
   const links = [
     {
@@ -101,7 +102,7 @@
       >
         <div class="relative">
           <img
-            src="https://cdn.sofa.sh/a.png"
+            src="{assets}/pfp.png"
             alt="icon"
             class="rounded-md drop-shadow-md w-20 h-20 blur-2xl hover:blur-none transition ease-in-out duration-500 cursor-pointer my-2"
           />
