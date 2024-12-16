@@ -1,41 +1,28 @@
 <script>
-  import { onMount } from "svelte";
   import Dot from "../../components/back.svelte";
-  import Repo from "../../components/repos/repo.svelte";
-  import Loading from "../../components/repos/loading.svelte";
+  import Project from "../../components/projects/project.svelte";
+  import Loading from "../../components/projects/loading.svelte";
 
-  let reposLoad = [];
-
-  onMount(async () => {
-    reposLoad = fetch(
-      "https://gh-pinned-repos--master.deno.dev/?username=slumberdemon"
-    ).then((response) => {
-      if (response.ok) return response.json();
-      throw new Error(response.status);
-    });
-  });
+  /** @type {import('./$types').PageData} */
+  export let data;
 </script>
 
 <svelte:head>
   <title>Projects</title>
 </svelte:head>
 
-<div class="flex justify-center m-4">
-  <div class="lg:w-4/12">
-    <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-      {#await reposLoad}
-        {#each Array(6).fill(null) as _}
-          <Loading />
-        {/each}
-      {:then repos}
-        {#each repos as repo}
-          <Repo {...repo} />
-        {/each}
-      {:catch error}
-        <pre>{error.stack}</pre>
-      {/await}
-    </div>
-  </div>
+<div class="m-4 gap-2 flex flex-col">
+  {#await data.projects}
+    {#each Array(3).fill(null) as _}
+      <Loading />
+    {/each}
+  {:then projects}
+    {#each data.projects as project}
+      <Project {...project} />
+    {/each}
+  {:catch error}
+    <pre>{error.stack}</pre>
+  {/await}
 </div>
 
 <Dot />

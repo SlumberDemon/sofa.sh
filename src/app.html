@@ -1,38 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta property="og:title" content="SlumberDemon" />
+        <meta name="description" content="Software Artist." />
+        <meta
+            name="keywords"
+            content="Personal site, Portfolio, SvelteKit, TailwindCSS, Deta Space, Developer, Artist"
+        />
+        <meta name="author" content="SlumberDemon, Sofa" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="theme-color" content="#00000000" />
+        <link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+        %sveltekit.head%
+    </head>
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<meta property="og:title" content="SlumberDemon" />
-	<meta name="description" content="Software Artist.">
-	<meta name="keywords" content="Personal site, Portfolio, SvelteKit, TailwindCSS, Deta Space, Developer, Artist">
-	<meta name="author" content="SlumberDemon, Sofa">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="theme-color" content="#00000000">
-	<meta property="og:image" content="https://cdn.sofa.sh/banner.png" />
-	<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
-	%sveltekit.head%
-</head>
+    <body
+        data-sveltekit-preload-data="hover"
+        class="dark:bg-black bg-white transition ease-in-out duration-700"
+    >
+        <!-- class="bg-cover w-full min-h-screen bg-no-repeat bg-fixed" style="background-image: url(/src/assets/bg.png)" -->
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
 
-<body data-sveltekit-preload-data="hover" class="dark:bg-black bg-white transition ease-in-out duration-700">
-	<!-- class="bg-cover w-full min-h-screen bg-no-repeat bg-fixed" style="background-image: url(/src/assets/bg.png)" -->
-	<div style="display: contents">%sveltekit.body%</div>
-</body>
+    <script>
+        try {
+            if (!("theme" in localStorage)) {
+                localStorage.theme = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches
+                    ? "dark"
+                    : "light";
+            }
 
-<script>
-	try {
-		if (!("theme" in localStorage)) {
-			localStorage.theme = window.matchMedia("(prefers-color-scheme: dark)")
-				.matches
-				? "dark"
-				: "light";
-		}
-
-		document.querySelector("html").classList.add(`${localStorage.theme}`);
-	} catch (e) {
-		console.error(e);
-	}
-</script>
-
+            document
+                .querySelector("html")
+                .classList.add(`${localStorage.theme}`);
+            document
+                .querySelector('meta[name="theme-color"]')
+                .setAttribute(
+                    "content",
+                    localStorage.theme === "light" ? "#ffffff" : "#000000",
+                );
+        } catch (e) {
+            console.error(e);
+        }
+    </script>
 </html>
