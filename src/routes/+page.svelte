@@ -29,7 +29,7 @@
             </div>
         </div>
         <div
-            class="font-sans font-[300] 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400 mt-2"
+            class="font-sans font-[300] 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400 mt-2 text-lg"
         >
             Passionate about the seamless blend of artistry and software.
             Currently at
