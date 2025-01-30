@@ -1,6 +1,24 @@
 export async function load() {
   const data = [
     {
+      date: "Started 2024",
+      description:
+        "Fishweb is a simple cli that makes it easy to run Python ASAGI applications effortlessly. It may be thought of as the Python equivalent of smallweb. Turn a new folder into a website without the need to start a development server or even setup a virtual environment.",
+      key: "Fishweb",
+      links: [
+        {
+          name: "Showcase",
+          url: "https://bsky.app/profile/sofa.sh/post/3lgqy7usvvs2m",
+        },
+        {
+          name: "Github (Soon)",
+          url: "https://github.com/SlumberDemon/fishweb",
+        },
+      ],
+      stack: ["Python"],
+      state: "Closed Alpha",
+    },
+    {
       date: "2024",
       description:
         "Pal is a modular command-line interface with AI function calling. Pal at its core provides a few in-built plugins, but it can easily be extended. Pal is a personal exploration project.",
