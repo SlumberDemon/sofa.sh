@@ -1,22 +1,40 @@
 export async function load() {
   const data = [
     {
+      date: "2025",
+      description:
+        "Arowana provides a simple local base and drive. Base is a NoSQL wrapper for sqlite3 and drive is a wrapper for the filesystem. Arowana is a sister project of fishweb.",
+      key: "Arowana",
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/SlumberDemon/arowana",
+        },
+        {
+          name: "Pypi",
+          url: "https://pypi.org/project/arowana/",
+        },
+      ],
+      stack: ["Python"],
+      state: "Open Source",
+    },
+    {
       date: "Started 2024",
       description:
         "Fishweb is a simple cli that makes it easy to run Python ASAGI applications effortlessly. It may be thought of as the Python equivalent of smallweb. Turn a new folder into a website without the need to start a development server or even setup a virtual environment.",
       key: "Fishweb",
       links: [
         {
-          name: "Showcase",
-          url: "https://bsky.app/profile/sofa.sh/post/3lgqy7usvvs2m",
+          name: "Documentation",
+          url: "https://fishweb.sofa.sh/",
         },
         {
-          name: "Github (Soon)",
+          name: "Github",
           url: "https://github.com/SlumberDemon/fishweb",
         },
       ],
       stack: ["Python"],
-      state: "Closed Alpha",
+      state: "Open Source",
     },
     {
       date: "2024",
