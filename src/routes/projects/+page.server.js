@@ -21,7 +21,7 @@ export async function load() {
     {
       date: "Started 2024",
       description:
-        "Fishweb is a simple cli that makes it easy to run Python ASAGI applications effortlessly. It may be thought of as the Python equivalent of smallweb. Turn a new folder into a website without the need to start a development server or even setup a virtual environment.",
+        "Fishweb is a web app manager that makes running static & Python ASGI/WSGI apps effortless.",
       key: "Fishweb",
       links: [
         {
@@ -34,6 +34,20 @@ export async function load() {
         },
       ],
       stack: ["Python"],
+      state: "Open Source",
+    },
+    {
+      date: "Started 2024",
+      description:
+        "Knotro reimagined as an app! Knotro gives you a 'box' of notes. It is minimal and allows for bi-directional linking similar to what apps like Roam Research and Obsidian do.",
+      key: "Knotro",
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/SlumberDemon/knotro",
+        },
+      ],
+      stack: ["JavaScript", "CSS", "HTML", "Rust"],
       state: "Open Source",
     },
     {
@@ -85,6 +99,19 @@ export async function load() {
       ],
       stack: ["Python", "CSS", "Shell"],
       state: "Open Source",
+    },
+    {
+      date: "2023",
+      description:
+        "A simple but stylish sudoku game built for the deta space hackathon",
+      key: "Meji",
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/SlumberDemon/meji",
+        },
+      ],
+      stack: ["SvelteKit", "JavaScript", "Python"],
     },
     {
       date: "2023",
