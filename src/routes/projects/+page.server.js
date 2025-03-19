@@ -112,6 +112,7 @@ export async function load() {
         },
       ],
       stack: ["SvelteKit", "JavaScript", "Python"],
+      state: "Open Source",
     },
     {
       date: "2023",
