@@ -30,7 +30,7 @@
     <!-- bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacitiy? -->
     <!-- https://www.youtube.com/watch?v=htGfnF1zN4g -->
     <div>
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center select-none">
             <div class="dark:text-white sm:max-lg:text-xl text-sm">
                 {date}
             </div>

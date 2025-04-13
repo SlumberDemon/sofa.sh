@@ -1,22 +1,54 @@
 export async function load() {
   const data = [
     {
+      date: "2025",
+      description:
+        "Arowana provides a simple local base and drive. Base is a NoSQL wrapper for sqlite3 and drive is a wrapper for the filesystem. Arowana is a sister project of fishweb.",
+      key: "Arowana",
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/SlumberDemon/arowana",
+        },
+        {
+          name: "Pypi",
+          url: "https://pypi.org/project/arowana/",
+        },
+      ],
+      stack: ["Python"],
+      state: "Open Source",
+    },
+    {
       date: "Started 2024",
       description:
-        "Fishweb is a simple cli that makes it easy to run Python ASAGI applications effortlessly. It may be thought of as the Python equivalent of smallweb. Turn a new folder into a website without the need to start a development server or even setup a virtual environment.",
+        "Fishweb is a web app manager that makes running static & Python ASGI/WSGI apps effortless.",
       key: "Fishweb",
       links: [
         {
-          name: "Showcase",
-          url: "https://bsky.app/profile/sofa.sh/post/3lgqy7usvvs2m",
+          name: "Documentation",
+          url: "https://fishweb.sofa.sh/",
         },
         {
-          name: "Github (Soon)",
+          name: "Github",
           url: "https://github.com/SlumberDemon/fishweb",
         },
       ],
       stack: ["Python"],
-      state: "Closed Alpha",
+      state: "Open Source",
+    },
+    {
+      date: "Started 2024",
+      description:
+        "Knotro reimagined as an app! Knotro gives you a 'box' of notes. It is minimal and allows for bi-directional linking similar to what apps like Roam Research and Obsidian do.",
+      key: "Knotro",
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/SlumberDemon/knotro",
+        },
+      ],
+      stack: ["JavaScript", "CSS", "HTML", "Rust"],
+      state: "Open Source",
     },
     {
       date: "2024",
@@ -66,6 +98,20 @@ export async function load() {
         { name: "Github", url: "https://github.com/SlumberDemon/dotfiles" },
       ],
       stack: ["Python", "CSS", "Shell"],
+      state: "Open Source",
+    },
+    {
+      date: "2023",
+      description:
+        "A simple but stylish sudoku game built for the deta space hackathon",
+      key: "Meji",
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/SlumberDemon/meji",
+        },
+      ],
+      stack: ["SvelteKit", "JavaScript", "Python"],
       state: "Open Source",
     },
     {
