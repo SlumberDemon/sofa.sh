@@ -124,7 +124,7 @@
                     {/if}
                 </div>
                 <div
-                    class="italic font-thin text-sm flex justify-end select-none mt-2 hide-small"
+                    class="italic font-thin text-sm flex justify-end select-none mt-2 hide-small dark:text-white"
                     in:blur|global={{ duration: 2400 }}
                     out:fly|global
                 >
