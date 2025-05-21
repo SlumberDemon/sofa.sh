@@ -32,10 +32,9 @@
             class="font-sans font-[300] 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400 mt-2 text-lg"
         >
             Passionate about the seamless blend of artistry and software.
-            Currently at
-            <Link url="https://deta.surf" label="deta" />, shaping Surf and
-            improving my own craft. <!--Also in the process of learning Japanese.-->
-            Discover more about me on my
+            Previously at
+            <Link url="https://deta.surf" label="deta" />. Discover more about
+            me on my
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <span
                 on:click={() => (toggle = true)}
@@ -54,12 +53,11 @@
 
 <div class="fixed bottom-0 flex justify-between items-center w-full p-2">
     <Dot />
-    <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="flex flex-row gap-2 items-center">
         <!-- <Status />-->
-        <!-- svelte-ignore a11y-role-has-required-aria-props -->
+        <!-- svelte-ignore a11y-mouse-events-have-key-events -->
         <div
+            role="none"
             on:mouseover={() => (toggle = true)}
             on:mouseleave={() => (toggle = false)}
         >
