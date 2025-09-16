@@ -17,7 +17,7 @@
         {#each Array(3).fill(null) as _}
             <Loading />
         {/each}
-    {:then projects}
+    {:then}
         {#each data.projects as project}
             <Project {...project} />
         {/each}

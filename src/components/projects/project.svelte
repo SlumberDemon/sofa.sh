@@ -21,7 +21,7 @@
 <!--colored tags maybe?-->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-    class="border p-6 border-neutral-200 rounded-lg bg-white dark:bg-black dark:border-neutral-800 drop-shadow-sm cursor-pointer"
+    class="border p-6 border-neutral-200 rounded-lg dark:border-neutral-800 drop-shadow-sm cursor-pointer"
     on:click={expand}
     role="menu"
     tabindex="0"

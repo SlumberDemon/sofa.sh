@@ -1,5 +1,5 @@
 export async function load() {
-  const data = [
+  const projects = [
     {
       date: "2025",
       description:
@@ -153,6 +153,8 @@ export async function load() {
   ];
 
   return {
-    projects: data,
+    projects,
   };
 }
+
+// Replace with API soon
