@@ -1,19 +1,19 @@
 <script>
-  import { page } from "$app/stores";
-  import Dot from "../components/back.svelte";
+    import { page } from "$app/stores";
+    import Dot from "../components/back.svelte";
 </script>
 
 <!-- Page -->
 
 <div
-  class="flex h-screen w-screen flex-wrap items-center scroll-smooth justify-center flex-col text-center overflow-hidden"
+    class="flex h-screen w-screen flex-wrap items-center scroll-smooth justify-center flex-col text-center overflow-hidden"
 >
-  <div class="font-rampart text-6xl text-rose-600">
-    {$page.status}
-  </div>
-  <div class="text-black text-4xl dark:text-white font-sans mt-1">
-    {$page.error.message}
-  </div>
+    <div class="font-rampart text-6xl text-rose-600">
+        {$page.status}
+    </div>
+    <div class="text-black text-4xl dark:text-white font-sans mt-1">
+        {$page.error.message}
+    </div>
 </div>
 
 <Dot />
