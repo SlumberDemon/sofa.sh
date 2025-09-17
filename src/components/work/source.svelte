@@ -16,7 +16,7 @@
         </div>
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-arrow-wave-right-up h-10 w-10 group-hover:text-rose-600 transition ease-in duration-500 flex-shrink-0 ml-40 dark:text-neutral-300"
+            class="icon icon-tabler icon-tabler-arrow-wave-right-up h-10 w-10 group-hover:text-rose-600 transition ease-in duration-500 flex-shrink-0 ml-20 lg:ml-30 dark:text-neutral-300"
             width="60"
             height="60"
             viewBox="0 0 24 24"

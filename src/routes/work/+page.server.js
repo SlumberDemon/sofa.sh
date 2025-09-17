@@ -10,6 +10,8 @@ export async function load() {
       website: "https://deta.surf",
     },
     {
+      start: 1687132800,
+      end: 1688169599,
       dates: "2023",
       title: "Intern",
       employer: "Progis Computers",
