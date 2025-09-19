@@ -7,10 +7,10 @@
 </script>
 
 <div
-    class="hover:bg-neutral-200 dark:hover:bg-neutral-800 border-b p-4 border-neutral-200 dark:border-neutral-800 dark:border-neutral-80 flex flex-row items-center justify-between"
+    class="hover:bg-neutral-200 dark:hover:bg-neutral-800 border-b p-2 border-neutral-200 dark:border-neutral-800 dark:border-neutral-80 flex flex-row items-center justify-between"
 >
     <div class="text-left">
-        <div class="text-neutral-900 dark:text-white my-2 font-medium text-2xl">
+        <div class="text-neutral-900 dark:text-white mb-2 font-medium text-2xl">
             {title}
         </div>
         <div class="underline decoration-2 underline-offset-4">
