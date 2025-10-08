@@ -1,30 +1,41 @@
-<!-- @migration-task Error while migrating Svelte code: can't migrate `let expanded = false;` to `$state` because there's a variable named state.
-     Rename the variable and try again or migrate by hand. -->
 <script>
     import { blur, fly } from "svelte/transition";
     import { cubicInOut } from "svelte/easing";
 
-    export let key = "";
-    export let date = "";
-    export let state = "";
-    export let stack = [];
-    export let description = "";
-    export let links = [];
+    /**
+     * @typedef {Object} Props
+     * @property {string} [key]
+     * @property {string} [date]
+     * @property {string} [status]
+     * @property {any} [stack]
+     * @property {string} [description]
+     * @property {any} [links]
+     */
 
-    let expanded = false;
+    /** @type {Props} */
+    let {
+        key = "",
+        date = "",
+        status = "",
+        stack = [],
+        description = "",
+        links = [],
+    } = $props();
+
+    let expanded = $state(false);
 
     function expand() {
         expanded = !expanded;
     }
 
-    $: expandedSwitch = expanded;
+    let expandedSwitch = $derived(expanded);
 </script>
 
 <!--colored tags maybe?-->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
     class="border p-6 border-neutral-200 rounded-lg dark:border-neutral-800 drop-shadow-sm cursor-pointer"
-    on:click={expand}
+    onclick={expand}
     role="menu"
     tabindex="0"
     aria-label="Clickable project card"
@@ -39,7 +50,7 @@
             <div
                 class="text-neutral-500 dark:text-neutral-400 cursor-not-allowed hide-small"
             >
-                {state}
+                {status}
             </div>
         </div>
 
