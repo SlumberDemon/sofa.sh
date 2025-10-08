@@ -13,7 +13,7 @@
 
 <!--Maybe add a compact mode toggle, shows a list but only name and link-->
 <div class="m-4 gap-2 flex flex-col">
-    {#await data.projects}
+    {#await data}
         {#each Array(3).fill(null) as _}
             <Loading />
         {/each}

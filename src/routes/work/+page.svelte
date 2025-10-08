@@ -13,7 +13,7 @@
             Past Work
         </div>
         <div class="mt-2 space-y-2">
-            {#await data.jobs}
+            {#await data}
                 {#each Array(3).fill(null) as _}
                     <div
                         class="bg-neutral-200 dark:bg-neutral-800 p-16 animate-pulse"
@@ -33,7 +33,7 @@
             Notable contributions
         </div>
         <div class="mt-2 space-y-2">
-            {#await data.source}
+            {#await data}
                 {#each Array(3).fill(null) as _}
                     <div
                         class="bg-neutral-200 dark:bg-neutral-800 p-8 animate-pulse"
