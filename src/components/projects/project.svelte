@@ -27,8 +27,6 @@
     function expand() {
         expanded = !expanded;
     }
-
-    let expandedSwitch = $derived(expanded);
 </script>
 
 <!--colored tags maybe?-->
@@ -74,7 +72,7 @@
                     </div>
                 {/each}
             </div>
-            {#if !expandedSwitch}
+            {#if !expanded}
                 <div
                     class="italic font-thin text-sm sm:max-lg:mt-0 mt-2 hide-small"
                     in:blur|global={{ duration: 2400 }}
@@ -86,7 +84,7 @@
         </div>
         <!-- maybe but this between tag and click to expand and make click to expand text change with var-->
 
-        {#if expandedSwitch}
+        {#if expanded}
             <div
                 in:fly|global={{ duration: 2000, easing: cubicInOut }}
                 out:fly|global={{ duration: 1200, easing: cubicInOut }}
