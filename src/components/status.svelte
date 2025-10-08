@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    let user = {};
+    let user = $state({});
 
     onMount(async () => {
         const res = await fetch(
@@ -10,7 +10,7 @@
         user = await res.json();
     });
 
-    let iSwitch;
+    let iSwitch = $state();
 
     function showI() {
         iSwitch = true;
@@ -20,14 +20,14 @@
         iSwitch = false;
     }
 
-    $: icoSwitch = iSwitch;
+    let icoSwitch = $derived(iSwitch);
 </script>
 
 <!-- Bad solution but eh -->
 
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div on:mouseover={showI} on:mouseleave={hideI} class="tooltip">
+<!-- svelte-ignore a11y_mouse_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div onmouseover={showI} onmouseleave={hideI} class="tooltip">
     <div class="tooltiptext capitalize drop-shadow-md">
         {user.data?.discord_status}
     </div>
@@ -35,39 +35,39 @@
         <div class="relative flex h-3 w-3">
             <div
                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
-            />
+           ></div>
             <div
                 class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
-            />
+           ></div>
         </div>
     {:else if user.data?.discord_status == "idle"}
         <div class="relative flex h-3 w-3">
             <div
                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"
-            />
+           ></div>
             <div
                 class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"
-            />
+           ></div>
         </div>
     {:else if user.data?.discord_status == "dnd"}
         <div class="relative flex h-3 w-3">
             <div
                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"
-            />
-            <div class="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+           ></div>
+            <div class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></div>
         </div>
     {:else if user.data?.discord_status == "offline"}
         <div class="relative flex h-3 w-3">
             <div
                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"
-            />
+           ></div>
             <div
                 class="relative inline-flex rounded-full h-3 w-3 bg-gray-500"
-            />
+           ></div>
         </div>
     {:else}
         <div class="relative flex h-3 w-3">
-            <div class="bg-neutral-300 animate-ping rounded-full w-full" />
+            <div class="bg-neutral-300 animate-ping rounded-full w-full"></div>
         </div>
     {/if}
 </div>

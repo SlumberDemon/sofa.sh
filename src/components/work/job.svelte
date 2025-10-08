@@ -1,9 +1,21 @@
 <script>
-    export let dates = "";
-    export let title = "";
-    export let employer = "";
-    export let type = "";
-    export let website = "";
+    /**
+     * @typedef {Object} Props
+     * @property {string} [dates]
+     * @property {string} [title]
+     * @property {string} [employer]
+     * @property {string} [type]
+     * @property {string} [website]
+     */
+
+    /** @type {Props} */
+    let {
+        dates = "",
+        title = "",
+        employer = "",
+        type = "",
+        website = ""
+    } = $props();
 </script>
 
 <div

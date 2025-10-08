@@ -7,9 +7,7 @@
 
     import { assets } from "$app/paths";
 
-    let toggle;
-
-    $: socialState = toggle;
+    let toggle = $state();
 </script>
 
 <svelte:head>
@@ -34,9 +32,9 @@
             Passionate about the seamless blend of artistry and software.
             Previously at
             <Link url="work" label="deta" />. Learn more about me on my
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
             <span
-                on:click={() => (toggle = true)}
+                onclick={() => (toggle = true)}
                 role="button"
                 tabindex="0"
                 class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
@@ -57,13 +55,13 @@
     <Dot />
     <div class="flex flex-row gap-2 items-center">
         <!-- <Status />-->
-        <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+        <!-- svelte-ignore a11y_mouse_events_have_key_events -->
         <div
             role="none"
-            on:mouseover={() => (toggle = true)}
-            on:mouseleave={() => (toggle = false)}
+            onmouseover={() => (toggle = true)}
+            onmouseleave={() => (toggle = false)}
         >
-            {#if socialState}
+            {#if toggle}
                 <Socials />
             {:else}
                 <Barcode />

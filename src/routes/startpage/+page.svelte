@@ -37,9 +37,9 @@
         },
     ];
 
-    let query;
+    let query = $state();
 
-    let currentDateTime = new Date();
+    let currentDateTime = $state(new Date());
 
     onMount(() => {
         const interval = setInterval(() => {
@@ -67,7 +67,7 @@
         "Dec",
     ];
 
-    let currentMode;
+    let currentMode = $state();
 
     function modeSwitcher() {
         if (localStorage.theme === "dark") {
@@ -87,7 +87,7 @@
             );
     }
 
-    $: mode = currentMode;
+    let mode = $derived(currentMode);
 </script>
 
 <svelte:head>
@@ -97,10 +97,10 @@
 <div class="flex justify-center items-center h-screen flex-col m-4 select-none">
     <div>
         <div class="flex flex-row justify-between items-center">
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
             <div
                 class="text-black dark:text-white cursor-pointer"
-                on:click={modeSwitcher}
+                onclick={modeSwitcher}
                 role="button"
                 tabindex="0"
             >
@@ -186,7 +186,7 @@
                 </div>
             </div>
         </div>
-        <form on:submit={(location.href = `https://search.sofa.sh?q=${query}`)}>
+        <form onsubmit={location.href = `https://search.sofa.sh?q=${query}`}>
             <input
                 class="border border-black rounded-md p-1 text-center outline-none min-w-full max-w-full bg-transparent dark:border-white dark:text-white placeholder:font-thin placeholder:text-neutral-500 placeholder:dark:text-neutral-400 placeholder:italic focus:scale-105 transition ease-in-out duration-500"
                 placeholder="Search..."

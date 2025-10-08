@@ -3,8 +3,14 @@
     import Job from "../../components/work/job.svelte";
     import Source from "../../components/work/source.svelte";
 
-    /** @type {import('./$types').PageData} */
-    export let data;
+    
+    /**
+     * @typedef {Object} Props
+     * @property {import('./$types').PageData} data
+     */
+
+    /** @type {Props} */
+    let { data } = $props();
 </script>
 
 <div class="m-4 justify-center flex">

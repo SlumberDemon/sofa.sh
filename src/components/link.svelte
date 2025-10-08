@@ -1,6 +1,5 @@
 <script>
-    export let label;
-    export let url;
+    let { label, url } = $props();
 </script>
 
 <a

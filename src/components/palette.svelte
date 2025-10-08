@@ -1,6 +1,6 @@
 <script>
     import { blur } from "svelte/transition";
-    let palSwitch = false;
+    let palSwitch = $state(false);
 
     const options = [
         {
@@ -87,19 +87,19 @@
         }
     }
 
-    $: palState = palSwitch;
+    let palState = $derived(palSwitch);
 </script>
 
-<svelte:window on:keydown={openPal} on:keyup={closePal} />
+<svelte:window onkeydown={openPal} onkeyup={closePal} />
 
 {#if palState}
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
     <div
         class="fixed inset-0 dark:bg-black opacity-50 z-20 bg-white"
-        on:click={exitPal}
+        onclick={exitPal}
         in:blur|global={{ duration: 200 }}
         out:blur|global={{ duration: 200 }}
-    />
+   ></div>
     <div
         class="absolute inset-0 flex justify-center items-center"
         in:blur|global={{ duration: 100 }}
@@ -109,7 +109,7 @@
             <div
                 class="bg-zinc-50 rounded-md drop-shadow-md border bg-opacity-80 backdrop-blur-md dark:bg-[#090909] dark:border-[#262626]"
             >
-                <!-- svelte-ignore a11y-autofocus -->
+                <!-- svelte-ignore a11y_autofocus -->
                 <input
                     placeholder="Search..."
                     class="p-4 focus:ring-0 outline-none bg-transparent border-b border-black/10 dark:border-[#262626] w-[35rem] dark:text-white"
@@ -126,10 +126,10 @@
                             </div>
                             <div class="mt-1">
                                 {#each options[index].items as item}
-                                    <!-- svelte-ignore a11y-click-events-have-key-events -->
+                                    <!-- svelte-ignore a11y_click_events_have_key_events -->
                                     <div
                                         class="flex flex-row items-center gap-2 hover:bg-neutral-200 text-zinc-500 dark:text-zinc-400 hover:text-black p-[0.65rem] rounded-xl cursor-pointer hover:dark:bg-[#161616] hover:dark:text-white"
-                                        on:click={item.action}
+                                        onclick={item.action}
                                     >
                                         {@html item.icon}
 

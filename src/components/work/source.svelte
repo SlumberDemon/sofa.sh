@@ -1,7 +1,13 @@
 <script>
-    export let name = "";
-    export let website = "";
-    export let description = "";
+    /**
+     * @typedef {Object} Props
+     * @property {string} [name]
+     * @property {string} [website]
+     * @property {string} [description]
+     */
+
+    /** @type {Props} */
+    let { name = "", website = "", description = "" } = $props();
 </script>
 
 <div

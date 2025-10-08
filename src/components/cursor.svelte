@@ -18,8 +18,8 @@
     });
 </script>
 
-<div id="blob" class="hidden lg:block md:block sm:hidden" />
-<div id="blur" />
+<div id="blob" class="hidden lg:block md:block sm:hidden"></div>
+<div id="blur"></div>
 
 <style>
     #blob {
