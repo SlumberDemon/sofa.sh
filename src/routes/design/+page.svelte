@@ -20,7 +20,7 @@
     <div
         class="text-2xl text-neutral-600 dark:text-neutral-300 font-light my-8"
     >
-        Some Designs
+        Designs
     </div>
     <Masonry gridGap={"0.75rem"} colWidth={"minmax(Min(20em, 100%), 1fr)"}>
         {#await data}
