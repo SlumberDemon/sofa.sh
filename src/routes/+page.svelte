@@ -40,11 +40,8 @@
                 class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
                 >socials</span
             >, explore my
-            <Link url="projects" label="favourite projects" /> or discover <Link
-                url="design"
-                label="some
-                of designs"
-            />. Feel free to
+            <Link url="projects" label="favourite projects" /> or discover some of
+            my <Link url="design" label="designs" />. Feel free to
             <Link url="mailto:hi@sofa.sh" label="contact" />
             me.
         </div>

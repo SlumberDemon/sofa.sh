@@ -3,7 +3,6 @@
     import Job from "../../components/work/job.svelte";
     import Source from "../../components/work/source.svelte";
 
-    
     /**
      * @typedef {Object} Props
      * @property {import('./$types').PageData} data
@@ -36,7 +35,7 @@
         <div
             class="mt-20 text-2xl text-neutral-600 dark:text-neutral-300 font-light"
         >
-            Notable contributions
+            Notable Contributions
         </div>
         <div class="mt-2 space-y-2">
             {#await data}
