@@ -2,27 +2,38 @@
     import { blur, fly } from "svelte/transition";
     import { cubicInOut } from "svelte/easing";
 
-    export let key = "";
-    export let date = "";
-    export let state = "";
-    export let stack = [];
-    export let description = "";
-    export let links = [];
+    /**
+     * @typedef {Object} Props
+     * @property {string} [key]
+     * @property {string} [date]
+     * @property {string} [status]
+     * @property {any} [stack]
+     * @property {string} [description]
+     * @property {any} [links]
+     */
 
-    let expanded = false;
+    /** @type {Props} */
+    let {
+        key = "",
+        date = "",
+        status = "",
+        stack = [],
+        description = "",
+        links = [],
+    } = $props();
+
+    let expanded = $state(false);
 
     function expand() {
         expanded = !expanded;
     }
-
-    $: expandedSwitch = expanded;
 </script>
 
 <!--colored tags maybe?-->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
-    class="border p-6 border-neutral-200 rounded-lg bg-white dark:bg-black dark:border-neutral-800 drop-shadow-sm cursor-pointer"
-    on:click={expand}
+    class="border p-6 border-neutral-200 rounded-lg dark:border-neutral-800 drop-shadow-sm cursor-pointer"
+    onclick={expand}
     role="menu"
     tabindex="0"
     aria-label="Clickable project card"
@@ -30,14 +41,14 @@
     <!-- bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacitiy? -->
     <!-- https://www.youtube.com/watch?v=htGfnF1zN4g -->
     <div>
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center select-none">
             <div class="dark:text-white sm:max-lg:text-xl text-sm">
                 {date}
             </div>
             <div
                 class="text-neutral-500 dark:text-neutral-400 cursor-not-allowed hide-small"
             >
-                {state}
+                {status}
             </div>
         </div>
 
@@ -61,7 +72,7 @@
                     </div>
                 {/each}
             </div>
-            {#if !expandedSwitch}
+            {#if !expanded}
                 <div
                     class="italic font-thin text-sm sm:max-lg:mt-0 mt-2 hide-small"
                     in:blur|global={{ duration: 2400 }}
@@ -73,7 +84,7 @@
         </div>
         <!-- maybe but this between tag and click to expand and make click to expand text change with var-->
 
-        {#if expandedSwitch}
+        {#if expanded}
             <div
                 in:fly|global={{ duration: 2000, easing: cubicInOut }}
                 out:fly|global={{ duration: 1200, easing: cubicInOut }}
@@ -124,7 +135,7 @@
                     {/if}
                 </div>
                 <div
-                    class="italic font-thin text-sm flex justify-end select-none mt-2 hide-small"
+                    class="italic font-thin text-sm flex justify-end select-none mt-2 hide-small dark:text-white"
                     in:blur|global={{ duration: 2400 }}
                     out:fly|global
                 >

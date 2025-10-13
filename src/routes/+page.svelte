@@ -7,9 +7,7 @@
 
     import { assets } from "$app/paths";
 
-    let toggle;
-
-    $: socialState = toggle;
+    let toggle = $state();
 </script>
 
 <svelte:head>
@@ -21,7 +19,7 @@
 <div
     class="flex justify-center items-center h-screen flex-col m-4 lg:fixed md:fixed"
 >
-    <div class="lg:w-4/12 md:w-2/4 sm:w-1/2 xl:w-4/12 2xl:w-4/12">
+    <div class="md:w-2/4 sm:w-1/2 lg:w-4/12">
         <div class="flex flex-row items-center">
             <Icon />
             <div class="text-rose-600 text-6xl font-rampart dark:text-glow-red">
@@ -29,23 +27,21 @@
             </div>
         </div>
         <div
-            class="font-sans font-[300] 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400 mt-2"
+            class="font-light 2xl:text-2xl text-left text-neutral-500 dark:text-neutral-400 mt-2 text-lg"
         >
             Passionate about the seamless blend of artistry and software.
-            Currently at
-            <Link url="https://deta.surf" label="deta" />, shaping Surf and
-            improving my own craft. <!--Also in the process of learning Japanese.-->
-            Discover more about me on my
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            Previously at
+            <Link url="work" label="deta" />. Learn more about me on my
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
             <span
-                on:click={() => (toggle = true)}
+                onclick={() => (toggle = true)}
                 role="button"
                 tabindex="0"
                 class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
                 >socials</span
-            >
-            or explore my
-            <Link url="projects" label="favourite projects" />. Feel free to
+            >, explore my
+            <Link url="projects" label="favourite projects" /> or discover some of
+            my <Link url="design" label="designs" />. Feel free to
             <Link url="mailto:hi@sofa.sh" label="contact" />
             me.
         </div>
@@ -54,16 +50,15 @@
 
 <div class="fixed bottom-0 flex justify-between items-center w-full p-2">
     <Dot />
-    <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="flex flex-row gap-2 items-center">
         <!-- <Status />-->
-        <!-- svelte-ignore a11y-role-has-required-aria-props -->
+        <!-- svelte-ignore a11y_mouse_events_have_key_events -->
         <div
-            on:mouseover={() => (toggle = true)}
-            on:mouseleave={() => (toggle = false)}
+            role="none"
+            onmouseover={() => (toggle = true)}
+            onmouseleave={() => (toggle = false)}
         >
-            {#if socialState}
+            {#if toggle}
                 <Socials />
             {:else}
                 <Barcode />

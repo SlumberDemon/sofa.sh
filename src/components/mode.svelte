@@ -20,13 +20,13 @@
     <div
         class="rounded-full border-rose-100 border-4 dark:border-rose-400 select-none dark:border-opacity-30"
     >
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y_click_events_have_key_events -->
         <div
             class="bg-rose-600 rounded-full w-12 h-12 hover:scale-110 transition ease-in-out duration-500 cursor-pointer"
-            on:click={modeSwitcher}
+            onclick={modeSwitcher}
             role="button"
             tabindex="0"
             aria-label="Theme Switcher"
-        />
+       ></div>
     </div>
 </div>
