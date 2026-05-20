@@ -5,22 +5,7 @@
     const socials = [
         {
             link: "mailto:hi@sofa.sh",
-            icon: `<svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-at h-8 w-8 hover:!stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"
-      width="60"
-      height="60"
-      viewBox="0 0 24 24"
-      stroke-width="0.5"
-      stroke="currentColor"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-      <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28" />
-    </svg>`,
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-send h-8 w-8 hover:!stroke-rose-600 transition ease-in-out duration-500 dark:stroke-white"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 14l11 -11" /><path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" /></svg>`,
         },
         {
             link: "https://bsky.app/profile/sofa.sh",

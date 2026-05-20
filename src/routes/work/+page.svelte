@@ -15,7 +15,7 @@
 <div class="m-4 justify-center flex">
     <div class="sm:max-lg:w-8/12 lg:w-6/12">
         <div class="text-2xl text-neutral-600 dark:text-neutral-300 font-light">
-            Past Work
+            Work Experience
         </div>
         <div class="mt-2 space-y-2">
             {#await data}

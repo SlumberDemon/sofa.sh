@@ -2,12 +2,9 @@
     import Link from "../components/link.svelte";
     import Dot from "../components/mode.svelte";
     import Icon from "../components/icon.svelte";
-    import Barcode from "../components/bottom/barcode.svelte";
     import Socials from "../components/bottom/socials.svelte";
 
     import { assets } from "$app/paths";
-
-    let toggle = $state();
 </script>
 
 <svelte:head>
@@ -31,15 +28,8 @@
         >
             Passionate about the seamless blend of artistry and software.
             Previously at
-            <Link url="work" label="deta" />. Learn more about me on my
-            <!-- svelte-ignore a11y_click_events_have_key_events -->
-            <span
-                onclick={() => (toggle = true)}
-                role="button"
-                tabindex="0"
-                class="cursor-pointer dark:text-white text-black hover:!text-rose-600 transition ease-in-out duration-500"
-                >socials</span
-            >, explore my
+            <Link url="work" label="deta" />. Learn more about me on my socials,
+            explore my
             <Link url="projects" label="favourite projects" /> or discover some of
             my <Link url="design" label="designs" />. Feel free to
             <Link url="mailto:hi@sofa.sh" label="contact" />
@@ -50,19 +40,5 @@
 
 <div class="fixed bottom-0 flex justify-between items-center w-full p-2">
     <Dot />
-    <div class="flex flex-row gap-2 items-center">
-        <!-- <Status />-->
-        <!-- svelte-ignore a11y_mouse_events_have_key_events -->
-        <div
-            role="none"
-            onmouseover={() => (toggle = true)}
-            onmouseleave={() => (toggle = false)}
-        >
-            {#if toggle}
-                <Socials />
-            {:else}
-                <Barcode />
-            {/if}
-        </div>
-    </div>
+    <Socials />
 </div>
