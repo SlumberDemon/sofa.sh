@@ -19,7 +19,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@unpic/svelte": "^1.0.0",
 		"svelte-masonry": "^0.1.5"
